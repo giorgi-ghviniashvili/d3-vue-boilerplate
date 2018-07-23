@@ -1,5 +1,7 @@
 <template>
     <foreignObject class="tooltipForeign"
+        :width="width"
+        :height="height"
         :id="`${obj.id ? obj.id : ''}`"
         :visibility="obj.visible ? 'visible' : 'hidden'"
         @mouseover="mouseover"
@@ -55,7 +57,9 @@ export default {
                 let bound = el.select("div").node().getBoundingClientRect()
                 let width = bound.width
                 let height = bound.height
-                
+                this.width = width > 100 ? width : 100
+                this.height = height > 50 ? height : 50
+
                 if (x + width > this.svgWidth) {
                     x -= width
                 }
@@ -81,7 +85,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     .tooltipForeign {
         .tooltip-container {
             position: absolute;

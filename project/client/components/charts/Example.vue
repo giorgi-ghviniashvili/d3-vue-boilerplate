@@ -19,6 +19,9 @@ import patternify from './d3-assets/patternify'
 
 export default {
   props: ['dataArray'],
+  components: {
+    Tooltip
+  },
   data () {
     return {
       width: 0,
@@ -73,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   svg {
       background-color: #FAFAFA;
       .test-text {
