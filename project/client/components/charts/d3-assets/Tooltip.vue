@@ -22,7 +22,9 @@ export default {
     ],
     data () {
         return {
-            animationTime: 500
+            animationTime: 500,
+            width: 0,
+            height: 0
         }
     },
     methods: {
